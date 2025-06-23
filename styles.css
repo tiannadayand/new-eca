@@ -1,0 +1,9 @@
+/* You can add global styles here if needed */
+/* For example, if you want to ensure Tailwind's base styles are applied */
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+body {
+  font-family: sans-serif; /* Example global font */
+}

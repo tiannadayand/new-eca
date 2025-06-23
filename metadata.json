@@ -1,7 +1,6 @@
-
 {
   "name": "Mzansi Market",
-  "description": "A C-2-C e-commerce platform with user login/registration. Users can browse listings, post items for sale, manage a shopping cart, and includes a basic admin interface. Inspired by the Eduvos Initial Project brief.",
+  "description": "A C-2-C e-commerce platform built with Vanilla JavaScript, HTML, and CSS. Features user login/registration, product browsing, item listing, shopping cart, and an admin interface. Styled with Tailwind CSS.",
   "requestFramePermissions": [],
   "prompt": ""
 }

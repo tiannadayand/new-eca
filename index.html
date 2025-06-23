@@ -6,36 +6,60 @@
     <title>Mzansi Market</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛍️</text></svg>">
+    <link rel="stylesheet" href="./styles.css">
     <style>
         body { 
             display: flex; 
             flex-direction: column; 
             min-height: 100vh; 
-            background-color: #111827; /* bg-gray-900 */
-            margin: 0; /* Ensure no default margin */
-            color: #d1d5db; /* Default text color for dark theme (text-gray-300) */
+            background-color: #111827; /* bg-gray-900 from Tailwind */
+            color: #d1d5db; /* text-gray-300 from Tailwind */
+            margin: 0;
         }
         main { 
             flex-grow: 1; 
+            /* Tailwind's container class will be applied dynamically */
         }
-        /* Styles for NavLink active state can be handled by React NavLink className prop or globally if preferred */
+        /* Specific styles for active nav links can be applied via JS if needed, or simple hover states */
+        .nav-link.active {
+            background-color: #ea580c; /* bg-orange-600 */
+            color: white;
+        }
+         /* Ensure home page background covers the view */
+        #home-page-background-container {
+            position: relative;
+            isolate: isolate; /* Create new stacking context */
+            flex-grow: 1; /* Allow it to grow */
+            display: flex; /* Enable flex for centering content */
+            flex-direction: column;
+        }
+        #home-page-background {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: -1;
+        }
     </style>
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.1.0/",
     "react": "https://esm.sh/react@^19.1.0",
-    "react-dom/client": "https://esm.sh/react-dom@^19.1.0/client",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2",
-    "react-dom/": "https://esm.sh/react-dom@^19.1.0/"
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.6.2"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <header id="app-header" class="bg-gray-800 shadow-md"></header>
+    <main id="app-main" class="container mx-auto px-4 py-8"></main>
+    <footer id="app-footer" class="bg-gray-800 text-gray-300 text-center p-4 mt-auto"></footer>
+
+    <script type="module" src="./app.js"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
